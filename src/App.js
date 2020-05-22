@@ -17,8 +17,9 @@ class App extends Component {
       },
       mode: 'cors'
     };
-    const url = `http://newsapi.org/v2/top-headlines?country=us&category=business`;
-    fetch(url, options).then(res => {
+    const url = `http://newsapi.org/v2/top-headlines?sources=talksport&apiKey=156e55ea2f484d48879ffb4d68d4ffa5`;
+    const req = new Request(url);
+    fetch(req).then(res => {
       console.log(res)
       return res.json()
     }).then(res => {
